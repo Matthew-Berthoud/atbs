@@ -33,20 +33,20 @@ print('My name is %s. I am %s years old.' % (name, age))
 ```
 
 ## Methods
+* none change the string itself since strings are immutable
 * `.upper()` and `.lower()` return strings with all upper or lowercase letters
-* startswith, endswith
-* join, split
+* `startswith`, `endswith`
+* `join`, `split`
     * split by default uses whitespace (space, tab, newline)
+    ```py
+    print(', '.join(['cats', 'rats', 'bats']))
+    # 'cats, rats, bats'
 
-```py
-print(', '.join(['cats', 'rats', 'bats']))
-# 'cats, rats, bats'
+    print('MyABCnameABCisABCSimon'.split('ABC'))
+    # ['My', 'name', 'is', 'Simon']
+    ```
 
-print('MyABCnameABCisABCSimon'.split('ABC'))
-# ['My', 'name', 'is', 'Simon']
-```
-
-* partition
+* `partition`
     * returns tuple!
     * only splits on the first occurrence
     * if no occurrences, whole string in tuple[0]
@@ -67,7 +67,6 @@ print('MyABCnameABCisABCSimon'.split('ABC'))
     ```
 
 
-
 ### `isX` methods
 
 * `.isupper()` and `.islower()` return booleans if all chars in string are upper/lower case letters
@@ -77,8 +76,44 @@ print('MyABCnameABCisABCSimon'.split('ABC'))
 * `.isspace()` string consists only of spaces, tabs, and newlines and is not blank
 * `.istitle()` string consists only of words that begin with an uppercase letter followed by only lowercase letters
 
+### Justifying Text
 
-* none change the string itself since strings are immutable
+* `rjust()`, `ljust()`, `center()`
+* spaces by default
+
+```py
+>>> 'Hello'.rjust(20)
+'              Hello'
+
+>>> 'Hello'.ljust(20, '-')
+'Hello---------------'
+
+>>> 'Hello'.center(20, '=')
+'=======Hello========'
+```
+
+### Removing whitespace
+* `strip()`, `rstrip()`, `lstrip()`
+* take whitespace off left, right, or both sides of string
+* can specify which characters to strip from ends (with a string arg):
+    ```py
+    >>> spam = 'SpamSpamBaconSpamEggsSpamSpam'
+    >>> spam.strip('ampS')
+    'BaconSpamEggs'
+    ```
+### Numeric Char values
+* `ord()` and `char()`
+```py
+>>> ord('!')
+33
+>>> chr(65)
+'A'
+```
+
+
+## PyperClip
+
+
 
 
 
